@@ -1,0 +1,49 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.css";
+
+function App() {
+  const [text, setText] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  const fetchMessages = async () => {
+    const res = await axios.get("http://localhost:5000/api/messages");
+    setMessages(res.data);
+  };
+
+  const postMessage = async () => {
+    if (!text.trim()) return;
+    await axios.post("http://localhost:5000/api/messages", { text });
+    setText("");
+    fetchMessages();
+  };
+
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
+  return (
+    <div className="container">
+      <h2>📢 Public Message Board</h2>
+      <div className="input-area">
+        <input
+          type="text"
+          placeholder="Write a message..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button onClick={postMessage}>Share</button>
+      </div>
+
+      <div className="messages">
+        {messages.map((msg) => (
+          <div className="message-box" key={msg._id}>
+            {msg.text}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
