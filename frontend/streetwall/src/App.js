@@ -5,15 +5,16 @@ import "./App.css";
 function App() {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
+  const BACKEND_SERVER = process.env.BACKEND_SERVER;
 
   const fetchMessages = async () => {
-    const res = await axios.get("http://localhost:5000/api/messages");
+    const res = await axios.get(`${BACKEND_SERVER}/api/messages`);
     setMessages(res.data);
   };
 
   const postMessage = async () => {
     if (!text.trim()) return;
-    await axios.post("http://localhost:5000/api/messages", { text });
+    await axios.post(`${BACKEND_SERVER}/api/messages`, { text });
     setText("");
     fetchMessages();
   };
