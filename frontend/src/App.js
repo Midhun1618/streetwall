@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="container">
-      <h2>📢 Public Message Board</h2>
+      <h2>Public Message Board</h2>
       <div className="input-area">
         <input
           type="text"
@@ -33,7 +33,7 @@ function App() {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button onClick={postMessage}>Share</button>
+        <button onClick={postMessage}>POST</button>
       </div>
 
       <div className="messages">
