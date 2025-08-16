@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -7,10 +7,10 @@ function App() {
   const [messages, setMessages] = useState([]);
   const BACKEND_SERVER = process.env.BACKEND_SERVER;
 
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     const res = await axios.get(`${BACKEND_SERVER}/api/messages`);
     setMessages(res.data);
-  };
+  }, [BACKEND_SERVER]);
 
   const postMessage = async () => {
     if (!text.trim()) return;
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     fetchMessages();
-  }, []);
+  }, [fetchMessages]);
 
   return (
     <div className="container">
