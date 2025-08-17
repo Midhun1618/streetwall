@@ -3,7 +3,7 @@
 }
 
 .body{
-  background-color: aquamarine;
+  background-color: rgb(145, 145, 145);
   width: auto;
   height: auto;
 }
@@ -45,7 +45,7 @@
   width: 25rem;
   height: auto;
   padding: 2rem;
-  background-color: #61dafb;
+  background-color: #b4efff;
   margin-top: 2rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 1.5rem;
