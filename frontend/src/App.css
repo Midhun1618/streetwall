@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.body{
+  background-color: aquamarine;
+  width: auto;
+  height: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +40,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+.message-box{
+  width: 25rem;
+  height: auto;
+  padding: 2rem;
+  background-color: #61dafb;
+  /* margin: 3rem; */
+  margin-top: 2rem;
+}
+
+.container{
+ max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-start{
+  display: flex;
+  justify-content: center;
+}
+
+.input-area{
+  background-color: rgb(241, 255, 250);
+  width: 15rem;
+  height: auto;
+  padding: 0.6rem;
+  outline: none;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  border: none;
+}
+
+.post-button{
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  background-color: coral;
+  padding: 0.3rem;
+  width: 3rem;
+  text-align: center;
+}
+
+.heading{
+  text-align: center;
+  justify-content: center;
+  text-decoration: dotted;
+  font-size: x-large;
+  font-weight: bolder;
+  padding: 1.5rem;
+  color: aliceblue;
+  text-shadow: 2px 2px 4px gray;
 }

@@ -24,24 +24,27 @@ function App() {
   }, [fetchMessages]);
 
   return (
-    <div className="container">
-      <h2>Public Message Board</h2>
-      <div className="input-area">
-        <input
-          type="text"
-          placeholder="Write a message..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button onClick={postMessage}>POST</button>
-      </div>
+    <div className="body">
+      <div className="container">
+        <div className="heading">Public Message Board</div>
+        <div className="input-start">
+          <input
+            className="input-area"
+            type="text"
+            placeholder="Write a message..."
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <div className="post-button" onClick={postMessage}>POST</div>
+        </div>
 
-      <div className="messages">
-        {messages.map((msg) => (
-          <div className="message-box" key={msg._id}>
-            {msg.text}
-          </div>
-        ))}
+        <div className="messages">
+          {messages.map((msg) => (
+            <div className="message-box" key={msg._id}>
+              {msg.text}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
