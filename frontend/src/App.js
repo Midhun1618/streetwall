@@ -5,16 +5,16 @@ import "./App.css";
 function App() {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
-  const BACKEND_SERVER = process.env.BACKEND_SERVER;
+  const REACT_APP_BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 
   const fetchMessages = useCallback(async () => {
-    const res = await axios.get(`${BACKEND_SERVER}/api/messages`);
+    const res = await axios.get(`${REACT_APP_BACKEND_SERVER}/api/messages`);
     setMessages(res.data);
-  }, [BACKEND_SERVER]);
+  }, [REACT_APP_BACKEND_SERVER]);
 
   const postMessage = async () => {
     if (!text.trim()) return;
-    await axios.post(`${BACKEND_SERVER}/api/messages`, { text });
+    await axios.post(`${REACT_APP_BACKEND_SERVER}/api/messages`, { text });
     setText("");
     fetchMessages();
   };
