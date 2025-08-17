@@ -46,8 +46,12 @@
   height: auto;
   padding: 2rem;
   background-color: #61dafb;
-  /* margin: 3rem; */
   margin-top: 2rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 2.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.374);
 }
 
 .container{
