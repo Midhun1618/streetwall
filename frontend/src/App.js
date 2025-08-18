@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
+import messageCard from "./message-card.png";
 
 function App() {
   const [text, setText] = useState("");
@@ -40,7 +41,7 @@ function App() {
 
         <div className="messages">
           {messages.map((msg) => (
-            <div className="message-box" key={msg._id}>
+            <div className="message-box" key={msg._id} style={{ backgroundImage: `url(${messageCard})` }}>
               {msg.text}
             </div>
           ))}
