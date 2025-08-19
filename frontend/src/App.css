@@ -41,8 +41,6 @@
 
 .container{
  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .input-start{
@@ -88,6 +86,8 @@
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 0.5rem;
   padding: 1rem;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
 }
 
 .post-button :hover{
@@ -95,4 +95,3 @@
   transform: translateX(5px);
   transition: all 0.3s ease-in-out;
 }
-
