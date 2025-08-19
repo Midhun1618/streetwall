@@ -67,6 +67,7 @@
   padding: 0.3rem;
   width: 3rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .heading{
@@ -85,4 +86,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+  padding: 1rem;
+}
+
+.post-button :hover{
+  background-color: rgb(88, 70, 64);
+  transform: translateX(5px);
+  transition: all 0.3s ease-in-out;
 }
